@@ -27,8 +27,9 @@
                 with:
                   node-version: ${{ matrix.node-version }}
               - name: Installing Mongodb
-                run: sudo apt-get update
-                run: sudo apt-get install -y mongodb
+                run: |
+                  sudo apt-get update
+                  sudo apt-get install -y mongodb
               - name: Starting Mongodb
                 run: mongod --dbpath=./data/db
               - run: npm i
