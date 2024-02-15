@@ -26,5 +26,7 @@
                 uses: actions/setup-node@v3
                 with:
                   node-version: ${{ matrix.node-version }}
+              - name: Starting Mongodb
+                run: mongod --dbpath=./data/db
               - run: npm i
               - run: npm test
