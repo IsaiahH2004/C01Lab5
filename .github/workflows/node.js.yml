@@ -34,6 +34,6 @@
                   sudo apt-get update
                   sudo apt-get install -y mongodb-org
               - name: Starting Mongodb
-                run: mongod --dbpath=./quirknotes/backend/data/db
+                run: mongod --fork --dbpath=./quirknotes/backend/data/db
               - run: npm i
               - run: npm test
